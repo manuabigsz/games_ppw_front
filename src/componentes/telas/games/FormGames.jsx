@@ -76,7 +76,7 @@ function FormPlataforma() {
                                     className="form-label">ID do desenvolvimento</label>
                                 <input type="number" className="form-control"
                                     id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
-                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} 
+                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} inputMode="numeric"
                                     onChange={handleChange} />
                             </div>
                         </div>
