@@ -58,7 +58,7 @@ function FormPlataforma() {
                             <div className="mb-3">
                                 <label for="txtPlataformaId"
                                     className="form-label">ID da plataforma</label>
-                                <input type="text" className="form-control"
+                                <input type="number" className="form-control"
                                     id="txtPlataformaId" placeholder="Informe o id da plataforma"
                                     required name="plataforma_id" value={objeto.plataforma_id} 
                                     onChange={handleChange} />
@@ -66,7 +66,7 @@ function FormPlataforma() {
                             <div className="mb-3">
                                 <label for="txtCategoria_id"
                                     className="form-label">ID da categoria</label>
-                                <input type="text" className="form-control"
+                                <input type="number" className="form-control"
                                     id="txtCategoria_id" placeholder="Informe a ID da categoria"
                                     required name="categoria_id" value={objeto.categoria_id} 
                                     onChange={handleChange} />
@@ -74,7 +74,7 @@ function FormPlataforma() {
                             <div className="mb-3">
                                 <label for="txtDesenvolvimento_id"
                                     className="form-label">ID do desenvolvimento</label>
-                                <input type="text" className="form-control"
+                                <input type="number" className="form-control"
                                     id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
                                     required name="desenvolvimento_id" value={objeto.desenvolvimento_id} 
                                     onChange={handleChange} />
