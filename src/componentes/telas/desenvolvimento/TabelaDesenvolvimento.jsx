@@ -11,7 +11,7 @@ function TabelaDesenvolvimento() {
         <div style={{ padding: '20px' }}>
             <h1 id="txtCont1">Desenvolvedoras de Games</h1>
             <Alerta alerta={alerta} />
-            <button type="button" className="btn btn-primary"
+            <button type="button" className="btn btn-dark"
                 data-bs-toggle="modal" data-bs-target="#modalEdicao"
                 onClick={() => novoObjeto()}>
                 Novo <i className="bi bi-file-plus"></i>
@@ -39,7 +39,7 @@ function TabelaDesenvolvimento() {
                                     <td>{objeto.nome}</td>
 
                                     <td align="center">
-                                        <button className="btn btn-info"
+                                        <button className="btn btn-secondary"
                                             title="Editar"
                                             data-bs-toggle="modal"
                                             data-bs-target="#modalEdicao"
@@ -47,7 +47,7 @@ function TabelaDesenvolvimento() {
                                                 editarObjeto(objeto.id)}                                            >
                                             <i className="bi bi-pencil-square"></i>
                                         </button>
-                                        <button className="btn btn-danger"
+                                        <button className="btn btn-light ml-2s"
                                             title="Remover"
                                             onClick={() => remover(objeto.id)}>
                                             <i className="bi bi-trash3"></i>

@@ -13,6 +13,6 @@ root.render(
 );
 
 
-serviceWorkerRegistration.unregister();
+serviceWorkerRegistration.register();
 
 reportWebVitals();

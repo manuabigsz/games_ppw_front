@@ -42,18 +42,18 @@ function FormPlataforma() {
                                     onChange={handleChange} />
                             </div>
                             <div className="mb-3">
-    <label htmlFor="txtDescricao" className="form-label">Descricao</label>
-    <input
-        type="text"
-        className="form-control"
-        id="txtDescricao"
-        placeholder="Informe a descrição"
-        
-        name="descricao"  
-        value={objeto.descricao}
-        onChange={handleChange}
-    />
-</div>
+                                <label htmlFor="txtDescricao" className="form-label">Descricao</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="txtDescricao"
+                                    placeholder="Informe a descrição"
+
+                                    name="descricao"
+                                    value={objeto.descricao}
+                                    onChange={handleChange}
+                                />
+                            </div>
 
                             <div className="mb-3">
                                 <label for="txtPlataformaId"

@@ -46,22 +46,19 @@ function TabelaGames() {
                                     <td>{objeto.categoria}</td>
                                     <td>{objeto.desenvolvimento}</td>
                                     <td align="center">
-                                        <button className="btn btn-dark"
+                                    <button className="btn btn-secondary"
                                             title="Editar"
                                             data-bs-toggle="modal"
                                             data-bs-target="#modalEdicao"
                                             onClick={() =>
-                                                editarObjeto(objeto.id)}>
+                                                editarObjeto(objeto.id)}                                            >
                                             <i className="bi bi-pencil-square"></i>
                                         </button>
-
-
-                                        <button className="btn btn-light ml-2"
+                                        <button className="btn btn-light ml-2s"
                                             title="Remover"
                                             onClick={() => remover(objeto.id)}>
                                             <i className="bi bi-trash3"></i>
                                         </button>
-
                                     </td>
                                 </tr>
                             ))}
