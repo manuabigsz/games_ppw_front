@@ -6,7 +6,7 @@ const Menu = () => {
         <div>
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="#" >
                     <i class="bi bi-stars" align="left" ></i>
                         STARSHIP GAMES
                         </a>
