@@ -60,7 +60,7 @@ function FormPlataforma() {
                                     className="form-label">ID da plataforma</label>
                                 <input type="text" className="form-control"
                                     id="txtPlataformaId" placeholder="Informe o id da plataforma"
-                                    required name="plataforma_id" value={objeto.plataforma_id} readOnly
+                                    required name="plataforma_id" value={objeto.plataforma_id} 
                                     onChange={handleChange} />
                             </div>
                             <div className="mb-3">
@@ -68,7 +68,7 @@ function FormPlataforma() {
                                     className="form-label">ID da categoria</label>
                                 <input type="text" className="form-control"
                                     id="txtCategoria_id" placeholder="Informe a ID da categoria"
-                                    required name="categoria_id" value={objeto.categoria_id} readOnly
+                                    required name="categoria_id" value={objeto.categoria_id} 
                                     onChange={handleChange} />
                             </div>
                             <div className="mb-3">
@@ -76,7 +76,7 @@ function FormPlataforma() {
                                     className="form-label">ID do desenvolvimento</label>
                                 <input type="text" className="form-control"
                                     id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
-                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} readOnly
+                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} 
                                     onChange={handleChange} />
                             </div>
                         </div>
