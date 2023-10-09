@@ -12,9 +12,9 @@ const Alerta = ({ alerta }) => {
 
     let classe = '';
     if(alerta.status === 'error'){
-        classe  = 'alert alert-danger';
+        classe  = 'alert alert-dark';
     }else{
-        classe = 'alert alert-primary';
+     
     }
 
     return(

@@ -20,53 +20,65 @@ function FormPlataforma() {
                         <div className="modal-body">
                             <Alerta alerta={alerta} />
                             <div className="mb-3">
-                                <label for="txtCodigo" 
-                                className="form-label">ID</label>
-                                <input type="number" className="form-control" 
-                                id="txtCodigo"
-                                readOnly name="codigo" value={objeto.id}
-                                onChange={handleChange}/>
+                                <label for="txtId"
+                                    className="form-label">ID</label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="txtId"
+                                    readOnly
+                                    name="id"
+                                    value={objeto.id ?? ''}
+                                    onChange={handleChange}
+                                />
+
                             </div>
                             <div className="mb-3">
-                                <label for="txtNome" 
-                                className="form-label">Nome</label>
-                                <input type="text" className="form-control" 
-                                id="txtNome" placeholder="Informe o nome"
-                                required name="nome" value={objeto.nome}
-                                onChange={handleChange}/>
-                            </div>    
+                                <label for="txtNome"
+                                    className="form-label">Nome</label>
+                                <input type="text" className="form-control"
+                                    id="txtNome" placeholder="Informe o nome"
+                                    required name="nome" value={objeto.nome}
+                                    onChange={handleChange} />
+                            </div>
                             <div className="mb-3">
-                                <label for="txtDescricao" 
-                                className="form-label">Descricao</label>
-                                <input type="text" className="form-control" 
-                                id="txtDescricao" placeholder="Informe a descrição"
-                                required name="Descricao" value={objeto.descricao}
-                                onChange={handleChange}/>
-                            </div>     
+    <label htmlFor="txtDescricao" className="form-label">Descricao</label>
+    <input
+        type="text"
+        className="form-control"
+        id="txtDescricao"
+        placeholder="Informe a descrição"
+        
+        name="descricao"  
+        value={objeto.descricao}
+        onChange={handleChange}
+    />
+</div>
+
                             <div className="mb-3">
-                                <label for="txtPlataformaId" 
-                                className="form-label">ID da plataforma</label>
-                                <input type="text" className="form-control" 
-                                id="txtPlataformaId" placeholder="Informe o id da plataforma"
-                                required name="plataforma_id" value={objeto.plataforma_id }
-                                onChange={handleChange}/>
-                            </div>     
+                                <label for="txtPlataformaId"
+                                    className="form-label">ID da plataforma</label>
+                                <input type="text" className="form-control"
+                                    id="txtPlataformaId" placeholder="Informe o id da plataforma"
+                                    required name="plataforma_id" value={objeto.plataforma_id} readOnly
+                                    onChange={handleChange} />
+                            </div>
                             <div className="mb-3">
-                                <label for="txtCategoria_id" 
-                                className="form-label">ID da categoria</label>
-                                <input type="text" className="form-control" 
-                                id="txtCategoria_id" placeholder="Informe a ID da categoria"
-                                required name="categoria_id" value={objeto.categoria_id}
-                                onChange={handleChange}/>
-                            </div>      
+                                <label for="txtCategoria_id"
+                                    className="form-label">ID da categoria</label>
+                                <input type="text" className="form-control"
+                                    id="txtCategoria_id" placeholder="Informe a ID da categoria"
+                                    required name="categoria_id" value={objeto.categoria_id} readOnly
+                                    onChange={handleChange} />
+                            </div>
                             <div className="mb-3">
-                                <label for="txtDesenvolvimento_id" 
-                                className="form-label">ID do desenvolvimento</label>
-                                <input type="text" className="form-control" 
-                                id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
-                                required name="desenvolvimento_id" value={objeto.desenvolvimento_id}
-                                onChange={handleChange}/>
-                            </div>                         
+                                <label for="txtDesenvolvimento_id"
+                                    className="form-label">ID do desenvolvimento</label>
+                                <input type="text" className="form-control"
+                                    id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
+                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} readOnly
+                                    onChange={handleChange} />
+                            </div>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary"

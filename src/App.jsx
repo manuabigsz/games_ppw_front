@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@popperjs/core/dist/cjs/popper.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -10,6 +11,8 @@ import Plataforma from "./componentes/telas/plataforma/Plataforma";
 import Desenvolvimento from "./componentes/telas/desenvolvimento/Desenvolvimento";
 import Jogadores from "./componentes/telas/jogadores/Jogadores";
 import Games from "./componentes/telas/games/Games";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,7 +48,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-      <RouterProvider router={router}/>
+      <RouterProvider  router={router}/>
   );
 }
 

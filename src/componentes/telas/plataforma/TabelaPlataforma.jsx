@@ -9,7 +9,7 @@ function Tabela() {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Plataformas</h1>
+            <h1 id="txtCont1">Plataformas</h1>
             <Alerta alerta={alerta} />
             <button type="button" className="btn btn-primary"
                 data-bs-toggle="modal" data-bs-target="#modalEdicao"
@@ -18,7 +18,7 @@ function Tabela() {
             </button>
             <br />
             <br />
-            {listaObjetos.length === 0 && <h1>Nenhuma plataforma encontrada</h1>}
+            {listaObjetos.length === 0 && <h1 id="txtCont1">Nenhuma plataforma encontrada</h1>}
             {listaObjetos.length > 0 &&
                 <div className="table-responsive">
                     <table class="table table-dark table-striped">

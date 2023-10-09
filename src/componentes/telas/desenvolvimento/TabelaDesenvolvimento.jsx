@@ -9,7 +9,7 @@ function TabelaDesenvolvimento() {
 
     return (
         <div style={{ padding: '20px' }}>
-            <h1>Desenvolvedoras de Games</h1>
+            <h1 id="txtCont1">Desenvolvedoras de Games</h1>
             <Alerta alerta={alerta} />
             <button type="button" className="btn btn-primary"
                 data-bs-toggle="modal" data-bs-target="#modalEdicao"
@@ -18,7 +18,7 @@ function TabelaDesenvolvimento() {
             </button>
             <br />
             <br />
-            {listaObjetos.length === 0 && <h1>Nenhuma desenvolvedora encontrada</h1>}
+            {listaObjetos.length === 0 && <h1 id="txtCont1">Nenhuma desenvolvedora encontrada</h1>}
             {listaObjetos.length > 0 &&
                 <div className="table-responsive">
                     <table class="table table-dark table-striped">

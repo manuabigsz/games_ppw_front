@@ -6,7 +6,7 @@ import {
 } from "../../../servicos/GamesServico";
 import TabelaGames from "./TabelaGames";
 import FormGames from "./FormGames";
-
+import "../../../index.css";
 function Games() {
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
@@ -70,8 +70,10 @@ function Games() {
                 alerta, listaObjetos, remover, objeto, editar,
                 acaoCadastrar, handleChange, novoObjeto, editarObjeto
             }}>
-            <TabelaGames />
-            <FormGames/>
+            <div >
+                <TabelaGames />
+                <FormGames />
+            </div>
         </GamesContext.Provider>
     )
 }
