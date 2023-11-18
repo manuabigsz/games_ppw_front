@@ -20,6 +20,9 @@ const Menu = () => {
                             <li class="nav-item">
                                 <NavLink className="nav-link active" aria-current="page" exact to="/">Home</NavLink>
                             </li>
+                            <li class="nav-item">
+                                <NavLink className="nav-link active" aria-current="page" exact to="dash">Dashboards</NavLink>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Manutenções

@@ -11,6 +11,7 @@ import Plataforma from "./componentes/telas/plataforma/Plataforma";
 import Desenvolvimento from "./componentes/telas/desenvolvimento/Desenvolvimento";
 import Jogadores from "./componentes/telas/jogadores/Jogadores";
 import Games from "./componentes/telas/games/Games";
+import AppexCharts from "./componentes/telas/dashboards/appex_charts_page";
 
 
 const router = createBrowserRouter([
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
       {
         path : "games",
         element : <Games/>
-      }
+      },
+      {
+        path : "dash",
+        element : <AppexCharts/>
+      },
     ]
   }
 ])
