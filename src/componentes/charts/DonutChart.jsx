@@ -1,29 +1,82 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState } from 'react';
 import Chart from "react-apexcharts";
 
-export default function DonutChart(){
-  var options = {
-    series: [10, 20, 15, 50],
-    labels: ['Apple', 'Mango', 'Orange', 'Watermelon'],
-    legend: {
-      show: false
+const DonutChart = () => {
+
+  //https://apexcharts.com/react-chart-demos/pie-charts/update-donut/
+  const [series, setSeries] = useState([44, 55, 13, 33]);
+
+  const options = {
+    chart: {
+      width: 380,
+      type: 'donut',
     },
-    stroke: {
-      show: true}
-  }
-  
-  return(
+    dataLabels: {
+      enabled: false
+    },
+    responsive: [{
+      breakpoint: 480,
+      options: {
+        chart: {
+          width: 200
+        },
+        legend: {
+          show: false
+        }
+      }
+    }],
+    legend: {
+      position: 'right',
+      offsetY: 0,
+      height: 230,
+    }
+  };
+
+  const appendData = () => {
+    const arr = [...series];
+    arr.push(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+    setSeries(arr);
+  };
+
+  const removeData = () => {
+    if (series.length === 1) return;
+    const arr = [...series];
+    arr.pop();
+    setSeries(arr);
+  };
+
+  const randomize = () => {
+    const arr = series.map(() => Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+    setSeries(arr);
+  };
+
+  const reset = () => {
+    setSeries([44, 55, 13, 33]);
+  };
+
+  return (
     <div>
-    <p className='text-2xl font-thin text-center'>Budget distribution</p>
-    <div className="row">
+      <div className="row">
         <Chart
-        options={options}
-        series={options.series}
-        type="donut"
-        height="100%"
-        width="100%"
-      />
-  </div>
-  </div>
-  )
-}
+          options={options}
+          series={series}
+          type="donut"
+          height="100%"
+          width="100%"
+        />
+      </div>
+
+      <div className="actions">
+        <button onClick={appendData}>+ ADD</button>
+        &nbsp;
+        <button onClick={removeData}>- REMOVE</button>
+        &nbsp;
+        <button onClick={randomize}>RANDOMIZE</button>
+        &nbsp;
+        <button onClick={reset}>RESET</button>
+      </div>
+    </div>
+  );
+};
+
+export default DonutChart;

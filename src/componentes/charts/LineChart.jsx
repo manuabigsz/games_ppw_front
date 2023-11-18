@@ -2,20 +2,23 @@ import React, {useEffect, useState} from 'react'
 import Chart from "react-apexcharts";
 
 export default function LineChart(){
+
+  //https://apexcharts.com/react-chart-demos/line-charts/dashed/
     var options = { 
       legend: {
         show: false
       },
       series: [{
-      name: 'TEAM A',
+      name: 'Time A',
       type: 'column',
       data: [10, 10, 50, 45]
+      
     }, {
-      name: 'TEAM B',
+      name: 'Time B',
       type: 'area',
       data: [45, 10, 50, 10]
     }, {
-      name: 'TEAM C',
+      name: 'Time C',
       type: 'line',
       data: [50, 45, 10, 10]
     }],
@@ -27,6 +30,7 @@ export default function LineChart(){
         show: false
       },
     },
+    
     stroke: {
       width: [0, 2, 5],
       curve: 'smooth'
@@ -48,7 +52,7 @@ export default function LineChart(){
         stops: [10, 10, 50, 45]
       }
     },
-    labels: ['01/01/2003', '02/01/2003', '03/01/2003', '04/01/2003'],
+    labels: ['01/02/2023', '02/02/2023', '03/02/2023', '04/02/2023'],
     markers: {
       size: 0
     },
@@ -77,7 +81,7 @@ export default function LineChart(){
 
   return(
     <div className="row">
-        <p className='text-2xl font-thin text-center'>Cross analysis</p>
+       
         <Chart
         options={options}
         series={options.series}
