@@ -12,7 +12,11 @@ const DonutChart = () => {
       type: 'donut',
     },
     dataLabels: {
-      enabled: false
+      enabled: false,
+      style: {
+        fontSize: '12px',
+        colors: ["#32a0a8"]
+      }
     },
     responsive: [{
       breakpoint: 480,
@@ -32,6 +36,7 @@ const DonutChart = () => {
     }
   };
 
+  
   const appendData = () => {
     const arr = [...series];
     arr.push(Math.floor(Math.random() * (100 - 1 + 1)) + 1);

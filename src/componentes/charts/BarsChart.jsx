@@ -51,7 +51,8 @@ export default function ColumnChart(){
       },
       tooltip: {
         enabled: true,
-      }
+      },
+      
     },
     yaxis: {
       axisBorder: {
