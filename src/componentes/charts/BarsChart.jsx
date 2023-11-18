@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Chart from "react-apexcharts";
 
-export default function BarsChart(){
+export default function ColumnChart(){
 
   var options = {
     chart: {

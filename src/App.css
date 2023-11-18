@@ -13,6 +13,21 @@
   }
 }
 
+p{
+color:aliceblue
+}
+
+a:link {
+  font-size: 10px;
+  color: white;
+  text-decoration: none; /* Remover sublinhado padrão dos links */
+}
+
+a:visited {
+  color: gray;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

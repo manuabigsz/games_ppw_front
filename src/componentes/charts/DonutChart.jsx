@@ -67,13 +67,13 @@ const DonutChart = () => {
       </div>
 
       <div className="actions">
-        <button onClick={appendData}>+ ADD</button>
+        <button type="button" class="btn btn-dark" onClick={appendData}>+ ADD</button>
         &nbsp;
-        <button onClick={removeData}>- REMOVE</button>
+        <button type="button" class="btn btn-dark" onClick={removeData}>- REMOVE</button>
         &nbsp;
-        <button onClick={randomize}>RANDOMIZE</button>
+        <button type="button" class="btn btn-dark" onClick={randomize}>RANDOMIZE</button>
         &nbsp;
-        <button onClick={reset}>RESET</button>
+        <button type="button" class="btn btn-dark" onClick={reset}>RESET</button>
       </div>
     </div>
   );
