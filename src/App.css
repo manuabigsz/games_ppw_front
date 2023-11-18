@@ -18,7 +18,6 @@ color:aliceblue
 }
 
 a:link {
-  font-size: 10px;
   color: white;
   text-decoration: none; /* Remover sublinhado padrão dos links */
 }
