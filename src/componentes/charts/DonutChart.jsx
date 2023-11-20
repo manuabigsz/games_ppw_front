@@ -12,7 +12,7 @@ const DonutChart = () => {
       type: 'donut',
     },
     dataLabels: {
-      enabled: false
+      enabled: true
     },
     responsive: [{
       breakpoint: 480,
@@ -29,6 +29,8 @@ const DonutChart = () => {
       position: 'right',
       offsetY: 0,
       height: 230,
+      show:false,
+
     }
   };
 

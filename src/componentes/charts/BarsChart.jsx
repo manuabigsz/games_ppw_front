@@ -12,18 +12,18 @@ export default function ColumnChart(){
       bar: {
         borderRadius: 5,
         dataLabels: {
-          position: 'top', // top, center, bottom
+          position: 'top',
         },
       }
     },
-    dataLabels: {
+    dataLabels: { //mostra os valores de cada barra
       enabled: true,
       formatter: function (val) {
         return val + "%";
       },
       offsetY: -20,
       style: {
-        fontSize: '12px',
+        fontSize: '15px',
         colors: ["#32a0a8"]
       }
     },
@@ -32,10 +32,10 @@ export default function ColumnChart(){
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
       position: 'top',
       axisBorder: {
-        show: false
+        show: true
       },
       axisTicks: {
-        show: false
+        show: true
       },
       crosshairs: {
         fill: {
@@ -56,10 +56,10 @@ export default function ColumnChart(){
     },
     yaxis: {
       axisBorder: {
-        show: false
+        show: true
       },
       axisTicks: {
-        show: false,
+        show: true
       },
       labels: {
         show: false,
