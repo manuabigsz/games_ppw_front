@@ -7,6 +7,10 @@ import {
 import TabelaGames from "./TabelaGames";
 import FormGames from "./FormGames";
 import "../../../index.css";
+
+import WithAuth from "../../seg/WithAuth";
+
+
 function Games() {
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
@@ -78,4 +82,4 @@ function Games() {
     )
 }
 
-export default Games;
+export default WithAuth(Games);

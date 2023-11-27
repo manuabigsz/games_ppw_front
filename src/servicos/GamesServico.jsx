@@ -1,9 +1,12 @@
+import { getToken } from "../seguranca/Autenticacao";
+
 export const getGamesAPI = async () => {
     const response = await fetch(`${process.env.REACT_APP_ENDERECO_API}/games`,
     {
         method : "GET",
         headers : {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            "authorization": getToken()
         }
     });
     const data = await response.json();

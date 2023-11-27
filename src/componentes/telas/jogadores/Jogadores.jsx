@@ -7,6 +7,9 @@ import {
 import TabelaJogadores from "./TabelaJogadores";
 import FormJogadores from "./FormJogadores";
 
+import WithAuth from "../../seg/WithAuth";
+
+
 function Jogadores() {
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
@@ -76,4 +79,4 @@ function Jogadores() {
     )
 }
 
-export default Jogadores;
+export default WithAuth(Jogadores);

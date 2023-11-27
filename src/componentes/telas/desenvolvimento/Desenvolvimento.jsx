@@ -6,6 +6,8 @@ import {
 } from "../../../servicos/DesenvolvimentoServico";
 import TabelaDesenvolvimento from "./TabelaDesenvolvimento";
 import FormDesenvolvimento from "./FormDesenvolvimento";
+import WithAuth from "../../seg/WithAuth";
+
 
 function Desenvolvimento() {
 
@@ -76,4 +78,4 @@ function Desenvolvimento() {
     )
 }
 
-export default Desenvolvimento;
+export default WithAuth(Desenvolvimento);

@@ -4,7 +4,7 @@ import "../../../App.css";
 import LineChart from "../../charts/LineChart";
 import RadialChart from "../../charts/RadarChart";
 import ColumnChart from "../../charts/BarsChart";
-
+import WithAuth from "../../seg/WithAuth";
 class AppexCharts extends Component {
 
   render() {
@@ -43,4 +43,4 @@ class AppexCharts extends Component {
   }
 }
 
-export default AppexCharts;
+export default WithAuth(AppexCharts);

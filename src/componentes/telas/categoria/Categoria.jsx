@@ -6,13 +6,19 @@ import {
 } from "../../../servicos/CategoriaServico";
 import TabelaCategoria from "./TabelaCategoria";
 import FormCategoria from "./FormCategoria";
+import WithAuth from "../../seg/WithAuth";
+import Carregando from "../../comuns/Carregando";
+import { useNavigate } from "react-router-dom";
 
 function Categoria() {
+
+    let navigate = useNavigate();
 
     const [alerta, setAlerta] = useState({ status: "", message: "" });
     const [listaObjetos, setListaObjetos] = useState([]);
     const [editar, setEditar] = useState(false);
     const [objeto, setObjeto] = useState({ codigo: 0, nome: "" });
+    const [carregando, setCarregando] = useState(false);
 
     const novoObjeto = () => {
         setEditar(false);
@@ -21,9 +27,15 @@ function Categoria() {
     }
 
     const editarObjeto = async codigo => {
-        setEditar(true);
-        setAlerta({ status: "", message: "" });
-        setObjeto(await getCategoriaPorCodigoAPI(codigo));
+        try {
+            setEditar(true);
+            setAlerta({ status: "", message: "" });
+            setObjeto(await getCategoriaPorCodigoAPI(codigo));
+        } catch (err) {
+            window.location.reload();
+            navigate("/login", { replace: true });
+        }
+
     }
 
     const acaoCadastrar = async e => {
@@ -37,7 +49,8 @@ function Categoria() {
                 setEditar(true);
             }
         } catch (err) {
-            console.log(err)
+            window.location.reload();
+            navigate("/login", { replace: true });
         }
         recuperaCategorias();
     }
@@ -49,15 +62,29 @@ function Categoria() {
     }
 
     const recuperaCategorias = async () => {
-        setListaObjetos(await getCategoriasAPI());
+        try {
+            setCarregando(true);
+            setListaObjetos(await getCategoriasAPI());
+            setCarregando(false);
+        } catch (err) {
+            window.location.reload();
+            navigate("/login", { replace: true });
+        }
+
     }
 
     const remover = async codigo => {
-        if (window.confirm('Deseja remover este objeto?')) {
-            let retornoAPI = await deleteCategoriaPorCodigoAPI(codigo);
-            setAlerta({ status: retornoAPI.status, message: retornoAPI.message });
-            recuperaCategorias();
+        try {
+            if (window.confirm('Deseja remover este objeto?')) {
+                let retornoAPI = await deleteCategoriaPorCodigoAPI(codigo);
+                setAlerta({ status: retornoAPI.status, message: retornoAPI.message });
+                recuperaCategorias();
+            }
+        } catch (err) {
+            window.location.reload();
+            navigate("/login", { replace: true });
         }
+
     }
 
     useEffect(() => {
@@ -70,10 +97,14 @@ function Categoria() {
                 alerta, listaObjetos, remover, objeto, editar,
                 acaoCadastrar, handleChange, novoObjeto, editarObjeto
             }}>
-            <TabelaCategoria />
-            <FormCategoria/>
+
+            <Carregando carregando={carregando}>
+                <TabelaCategoria />
+            </Carregando>
+
+            <FormCategoria />
         </CategoriaContext.Provider>
     )
 }
 
-export default Categoria;
+export default WithAuth(Categoria);

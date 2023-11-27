@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-const Menu = () => {
+const MenuPrivado = () => {
 
     return (
         <div>
@@ -47,4 +47,4 @@ const Menu = () => {
     )
 };
 
-export default Menu;
+export default MenuPrivado;
