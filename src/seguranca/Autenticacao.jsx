@@ -34,12 +34,15 @@ export const getUsuario = () => {
     if (autenticacao.auth === false) {
         return null;
     } else {
+      
         let decoded = jwtDecode(autenticacao.token);
+        console.log('achou s' );
         if (decoded.exp <= Math.floor(new Date() / 1000)){
             console.log('Token expirado');
             logout();
             throw "Token expirado";
         } else {
+            console.log(decoded.usuario)
             return decoded.usuario;
         }
     }

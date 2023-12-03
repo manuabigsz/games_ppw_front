@@ -1,12 +1,27 @@
 import { useContext } from "react";
 import Alerta from "../../comuns/Alerta";
 import GamesContext from "./GamesContext";
+import SelectInput from "../../comuns/SelectInput";
 
 function FormPlataforma() {
 
-    const { objeto, handleChange, acaoCadastrar, alerta }
+    const { objeto, handleChange, acaoCadastrar, alerta,listaPlataformas, listaCategorias, listaDesenv }
         = useContext(GamesContext);
 
+        const plataformaOptions = [
+            { value: '', label: 'Selecione a plataforma' },
+            ...listaPlataformas.map((plat) => ({ value: plat.id, label: plat.nome })),
+        ];
+
+        const categoriaOptions = [
+            { value: '', label: 'Selecione a categoria' },
+            ...listaCategorias.map((cat) => ({ value: cat.id, label: cat.nome })),
+        ];
+
+        const desenvOptions = [
+            { value: '', label: 'Selecione o desenvolvimento' },
+            ...listaDesenv.map((desenv) => ({ value: desenv.id, label: desenv.nome })),
+        ];
     return (
         <div className="modal fade" id="modalEdicao"
             tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,28 +71,22 @@ function FormPlataforma() {
                             </div>
 
                             <div className="mb-3">
-                                <label for="txtPlataformaId"
-                                    className="form-label">ID da plataforma</label>
-                                <input type="number" className="form-control"
-                                    id="txtPlataformaId" placeholder="Informe o id da plataforma"
-                                    required name="plataforma_id" value={objeto.plataforma_id} 
-                                    onChange={handleChange} />
+                                 <SelectInput label="Plataforma" 
+                                 id="txtPlataformaId" required name="plataforma_id" value={objeto.plataforma_id} onChange={handleChange} 
+                                 options={plataformaOptions} validFeedback="Plataforma OK" 
+                                 invalidFeedback="Selecione a plataforma"/>
                             </div>
                             <div className="mb-3">
-                                <label for="txtCategoria_id"
-                                    className="form-label">ID da categoria</label>
-                                <input type="number" className="form-control"
-                                    id="txtCategoria_id" placeholder="Informe a ID da categoria"
-                                    required name="categoria_id" value={objeto.categoria_id} 
-                                    onChange={handleChange} />
+                            <SelectInput label="Categoria" 
+                                 id="txtCategoria_id" required name="categoria_id" value={objeto.categoria_id} onChange={handleChange} 
+                                 options={categoriaOptions} validFeedback="Categoria OK" 
+                                 invalidFeedback="Selecione a categoria"/>
                             </div>
                             <div className="mb-3">
-                                <label for="txtDesenvolvimento_id"
-                                    className="form-label">ID do desenvolvimento</label>
-                                <input type="number" className="form-control"
-                                    id="txtDesenvolvimento_id" placeholder="Informe o id da desenvolvedora"
-                                    required name="desenvolvimento_id" value={objeto.desenvolvimento_id} 
-                                    onChange={handleChange} />
+                            <SelectInput label="Desenvolvimento" 
+                                 id="txtDesenvolvimento_id" required name="desenvolvimento_id" value={objeto.desenvolvimento_id} onChange={handleChange} 
+                                 options={desenvOptions} validFeedback="Desenvolvimento OK" 
+                                 invalidFeedback="Selecione a desenvolvimento"/>
                             </div>
                         </div>
                         <div className="modal-footer">

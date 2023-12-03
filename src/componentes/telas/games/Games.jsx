@@ -9,6 +9,9 @@ import FormGames from "./FormGames";
 import "../../../index.css";
 
 import WithAuth from "../../seg/WithAuth";
+import { getPlataformaAPI } from "../../../servicos/PlataformaSevico";
+import { getCategoriasAPI } from "../../../servicos/CategoriaServico";
+import { getDesenvolvimentoAPI } from "../../../servicos/DesenvolvimentoServico";
 
 
 function Games() {
@@ -17,7 +20,10 @@ function Games() {
     const [listaObjetos, setListaObjetos] = useState([]);
     const [editar, setEditar] = useState(false);
     const [objeto, setObjeto] = useState({ codigo: 0, nome: "" });
-
+    const [listaPlataformas, setListaPlataformas] = useState([]);
+    const [listaCategorias, setListaCategorias] = useState([]);
+    const [listaDesenv, setListaDesenv] = useState([]);
+    
     const novoObjeto = () => {
         setEditar(false);
         setAlerta({ status: "", message: "" });
@@ -64,7 +70,21 @@ function Games() {
         }
     }
 
+    const recuperaPlataformas = async () => {
+        setListaPlataformas(await getPlataformaAPI());
+    }
+
+    const recuperaCategorias = async () => {
+        setListaCategorias(await getCategoriasAPI());
+    }
+    const recuperaDesenv = async () => {
+        setListaDesenv(await getDesenvolvimentoAPI());
+    }
+
     useEffect(() => {
+        recuperaPlataformas();
+        recuperaCategorias();
+        recuperaDesenv();
         recuperaGames();
     }, []);
 
@@ -72,7 +92,8 @@ function Games() {
         <GamesContext.Provider
             value={{
                 alerta, listaObjetos, remover, objeto, editar,
-                acaoCadastrar, handleChange, novoObjeto, editarObjeto
+                acaoCadastrar, handleChange, novoObjeto, editarObjeto,
+                listaPlataformas, listaCategorias,listaDesenv
             }}>
             <div >
                 <TabelaGames />

@@ -1,7 +1,9 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { getUsuario,logout } from '../../seguranca/Autenticacao';
 
 const MenuPrivado = () => {
-
+    const usuario = getUsuario();
+    console.log(usuario.nome);
     return (
         <div>
             <nav class="navbar navbar-dark bg-dark">
@@ -36,7 +38,20 @@ const MenuPrivado = () => {
 
                                 </ul>
                             </li>
-                           
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {usuario ? "Usuário: " + usuario.nome : "Usuário" + usuario.nome}
+                                </a>
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        {usuario ?
+                                            <NavLink className="dropdown-item" exact to="/"
+                                                onClick={() => logout()}>Logout</NavLink>
+                                            :
+                                            <NavLink className="dropdown-item" exact to="/login">Login</NavLink>}
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
 
                     </div>
